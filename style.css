@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap'); /* import fonts */
+
+/* Put Custom properties in root */
+:root {
+    --violet: hsl(257, 40%, 49%);
+    --soft-magenta:hsl(300, 69%, 71%);
+}
+
+*, 
+*::after, 
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, 
+h1, 
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Mobile first workflow  */
+
+body{
+    min-width: 375px;
+    background: url(./images/bg-mobile.svg), var(--violet);
+    background-repeat: no-repeat;
+    background-position: top;
+    padding: 2rem;
+    text-align: center;
+    color: #fff;
+    min-height: 100vh;
+    border: 2px solid yellowgreen;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Resize logo image */
+.logo {
+    width: 120px;
+    height: auto;
+    /* transform: scale(.5, .5); */
+}
+
+.illustration-mockup {
+    max-width: 100%;
+    margin-block: 3rem;
+    margin-inline: auto;
+}
+
+.main-title {
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 400;
+    margin-bottom: 1em;
+}
+
+.main-text {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    margin-bottom: 3em;
+    opacity: .9;
+}
+
+.register-btn {
+    text-decoration: none;
+    cursor: pointer;
+    background: white;
+    padding: 1rem 4rem;
+    border-radius: 2rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+}
+
+.register-btn:hover {
+    background-color: var(--soft-magenta);
+}
+
+/* Footer style  */
+.social-icon {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    padding: .5rem;
+    color: #fff;
+    margin: auto .3rem;
+}
+
+.social-icon:hover {
+    border: 1px solid var(--soft-magenta);
+    color: var(--soft-magenta);
+}
+
+/* Desktop  */
+@media (min-width: 1220px) {
+    body {
+        padding: 4rem;
+        background: url(./images/bg-desktop.svg), var(--violet);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        text-align: right;
+    }
+
+    .logo {
+        width: 260px;
+        height: auto; 
+    }
+
+    main {
+        display: flex;
+        /* gap: 4rem;  */
+        text-align: left;
+    }
+
+    main > * {  /* getting all the direct children of main */
+        flex-basis: 100%;
+    }
+
+    main > * + * {
+        margin-left: 4em;
+        margin-top: 8em;
+    }
+
+    /* .illustration-mockup {
+        flex: 1 0 0%; 
+    }
+
+    .main-content {
+        text-align: left;
+        flex: 1 0 0%; 
+        margin-top: 10rem;
+    }  */
+
+    .main-title {
+        font-size: 3rem;
+    }
+
+    .main-text {
+        font-size: 1.5rem;
+    }
+
+    footer {
+        margin-top: 0;
+    }
+}
